@@ -1,1 +1,186 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr shelke herbalcure | Hair & Skin Care Products</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f9fbf8;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #2e7d32;
+            color: white;
+            padding: 2.5rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h2 {
+            color: #2e7d32;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .gallery-item {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item p {
+            padding: 1rem;
+            font-weight: 600;
+            color: #1b5e20;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            text-align: center;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn-instagram {
+            background-color: #e1306c;
+            color: white;
+        }
+
+        .btn-email {
+            background-color: #2e7d32;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        @media (min-width: 600px) {
+            .btn-container {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Dr shelke herbalcure</h1>
+        <p>Natural & Herbal Solutions for Hair and Skin Care</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="card">
+            <h2>About Us</h2>
+            <p>Welcome to <strong>Dr shelke herbalcure</strong>. We offer specialized, natural herbal products crafted to care for your hair and skin health. Located in Kalyan East, we bring high-quality formulations straight from nature.</p>
+        </div>
+
+        <div class="card">
+            <h2>Our Product Range</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="./hair-range.png" alt="Hair Care Range">
+                    <p>Hair Care Range</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="./herbal-soap.png" alt="Herbal Soap">
+                    <p>Herbal Soap</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="./soap-lineup.png" alt="Soap Lineup">
+                    <p>Soap Lineup</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="./multivitamin.png" alt="Multivitamin Care">
+                    <p>Multivitamin Care</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="./he-and-she.png" alt="He & She Herbal Range">
+                    <p>He & She Herbal Range</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Contact & Location</h2>
+            <p><strong>Location:</strong> Kalyan East, Maharashtra</p>
+            <p><strong>Email:</strong> drshelkeherbalcure@gmail.com</p>
+
+            <div class="btn-container">
+                <a href="https://www.instagram.com/drshelked?stkn=MTZrdnczMzExOHc1cA==" class="btn btn-instagram" target="_blank">Follow on Instagram</a>
+                <a href="mailto:drshelkeherbalcure@gmail.com" class="btn btn-email">Email Us</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; Dr shelke herbalcure. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
