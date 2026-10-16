@@ -1,187 +1,1119 @@
-
-      
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr shelke herbalcure | Hair & Skin Care Products</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    <title>DR. SHELKE HERBALCURE | Ultra-Luxury Botanical Care</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cinzel & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- QRCode.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-        body {
-            background-color: #f9fbf8;
-            color: #2d3748;
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: #2e7d32;
-            color: white;
-            padding: 2.5rem 1rem;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-
-        .card h2 {
-            color: #2e7d32;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .gallery-item {
-            background: #fff;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .gallery-item p {
-            padding: 1rem;
-            font-weight: 600;
-            color: #1b5e20;
-        }
-
-        .btn-container {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .btn {
-            display: inline-block;
-            text-align: center;
-            padding: 0.8rem 1.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .btn-instagram {
-            background-color: #e1306c;
-            color: white;
-        }
-
-        .btn-email {
-            background-color: #2e7d32;
-            color: white;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem 1rem;
-            color: #718096;
-            font-size: 0.9rem;
-        }
-
-        @media (min-width: 600px) {
-            .btn-container {
-                flex-direction: row;
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            950: '#031710',
+                            900: '#062c1e', // Royal Emerald Green
+                            800: '#0a422e',
+                            700: '#0f5c41',
+                            100: '#e6f3ee'
+                        },
+                        gold: {
+                            300: '#f3e5ab',
+                            400: '#e6ca65',
+                            500: '#d4af37', // Luxury Gold
+                            600: '#aa8823',
+                            700: '#806314'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
             }
+        }
+    </script>
+    <style>
+        /* Custom Luxury Scrollbar & Styles */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #031710;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 4px;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa8823 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-gradient {
+            border-image: linear-gradient(to right, #d4af37, #f3e5ab, #aa8823) 1;
+        }
+        .gold-btn {
+            background: linear-gradient(135deg, #d4af37 0%, #aa8823 100%);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .gold-btn:hover {
+            background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 100%);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+        .glass-card {
+            background: rgba(6, 44, 30, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .pulse-gold {
+            box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6);
+            animation: pulse-gold-anim 2s infinite;
+        }
+        @keyframes pulse-gold-anim {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6); }
+            70% { box-shadow: 0 0 0 12px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
         }
     </style>
 </head>
-<body>
+<body class="bg-emerald-950 text-slate-100 font-sans antialiased selection:bg-gold-500 selection:text-emerald-950">
 
-    <header>
-        <h1>Dr shelke herbalcure</h1>
-        <p>Natural & Herbal Solutions for Hair and Skin Care</p>
-    </header>
-
-    <div class="container">
-        
-        <div class="card">
-            <h2>About Us</h2>
-            <p>Welcome to <strong>Dr shelke herbalcure</strong>. We offer specialized, natural herbal products crafted to care for your hair and skin health. Located in Kalyan East, we bring high-quality formulations straight from nature.</p>
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-emerald-900 via-gold-600 to-emerald-900 text-slate-900 text-xs font-semibold py-2 px-4 text-center tracking-widest uppercase border-b border-gold-500/30 flex justify-between items-center px-6">
+        <span class="hidden md:inline"><i class="fa-solid fa-truck-fast mr-2"></i> Free Express Shipping across India on Orders above ₹499</span>
+        <span class="mx-auto md:mx-0 font-serif font-bold text-emerald-950"><i class="fa-solid fa-shield-halved mr-1"></i> Authentic Herbal Formulations by Dr. Shelke | Kalyan West</span>
+        <div class="hidden md:flex items-center space-x-4 text-xs">
+            <a href="tel:+918689958725" class="hover:text-emerald-950 transition"><i class="fa-solid fa-phone mr-1"></i> +91 8689958725</a>
+            <span>|</span>
+            <a href="mailto:drshelkeherbalcure@gmail.com" class="hover:text-emerald-950 transition"><i class="fa-solid fa-envelope mr-1"></i> Email Us</a>
         </div>
-
-        <div class="card">
-            <h2>Our Product Range</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="./hair-range.png" alt="Hair Care Range">
-                    <p>Hair Care Range</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="./herbal-soap.png" alt="Herbal Soap">
-                    <p>Herbal Soap</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="./soap-lineup.png" alt="Soap Lineup">
-                    <p>Soap Lineup</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="./multivitamin.png" alt="Multivitamin Care">
-                    <p>Multivitamin Care</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="./he-and-she.png" alt="He & She Herbal Range">
-                    <p>He & She Herbal Range</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2>Contact & Location</h2>
-            <p><strong>Location:</strong> Kalyan East, Maharashtra</p>
-            <p><strong>Email:</strong> drshelkeherbalcure@gmail.com</p>
-
-            <div class="btn-container">
-                <a href="https://www.instagram.com/drshelked?stkn=MTZrdnczMzExOHc1cA==" class="btn btn-instagram" target="_blank">Follow on Instagram</a>
-                <a href="mailto:drshelkeherbalcure@gmail.com" class="btn btn-email">Email Us</a>
-            </div>
-        </div>
-
     </div>
 
-    <footer>
-        <p>&copy; Dr shelke herbalcure. All Rights Reserved.</p>
+    <!-- Main Navigation Header -->
+    <nav class="sticky top-0 z-40 bg-emerald-950/90 backdrop-blur-md border-b border-gold-500/20 shadow-2xl transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo & Title -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-12 h-12 rounded-full border-2 border-gold-500 flex items-center justify-center bg-emerald-900 group-hover:scale-105 transition-transform duration-300 shadow-lg shadow-gold-500/10">
+                        <i class="fa-solid fa-leaf text-gold-400 text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-serif text-xl sm:text-2xl font-extrabold tracking-widest gold-gradient-text block leading-none">DR. SHELKE</span>
+                        <span class="text-[10px] tracking-[0.3em] text-gold-300 font-semibold uppercase block mt-1">HERBALCURE BOTANICALS</span>
+                    </div>
+                </a>
+
+                <!-- Nav Links -->
+                <div class="hidden md:flex items-center space-x-8 font-medium text-sm text-slate-300 uppercase tracking-widest">
+                    <a href="#products" class="hover:text-gold-400 transition-colors py-2 border-b-2 border-transparent hover:border-gold-500">Shop Products</a>
+                    <a href="#about" class="hover:text-gold-400 transition-colors py-2 border-b-2 border-transparent hover:border-gold-500">About Doctor</a>
+                    <a href="#payment-info" class="hover:text-gold-400 transition-colors py-2 border-b-2 border-transparent hover:border-gold-500 text-gold-400 font-semibold"><i class="fa-solid fa-qrcode mr-1"></i> Scan & Pay</a>
+                    <a href="javascript:void(0)" onclick="openTrackingModal()" class="hover:text-gold-400 transition-colors py-2 border-b-2 border-transparent hover:border-gold-500"><i class="fa-solid fa-location-dot mr-1"></i> Track Order</a>
+                </div>
+
+                <!-- Right Action Buttons -->
+                <div class="flex items-center space-x-4">
+                    <!-- Search Bar Toggle -->
+                    <div class="relative hidden sm:block">
+                        <input id="searchInput" onkeyup="filterProducts()" type="text" placeholder="Search herbal care..." class="bg-emerald-900/60 text-slate-200 text-xs rounded-full pl-9 pr-4 py-2 border border-gold-500/30 focus:outline-none focus:border-gold-400 w-44 focus:w-60 transition-all">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-gold-400/70 text-xs"></i>
+                    </div>
+
+                    <!-- Direct QR Scan Modal Launch -->
+                    <button onclick="openPaymentModal()" class="gold-btn text-emerald-950 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center shadow-lg hover:shadow-gold-500/20">
+                        <i class="fa-solid fa-qrcode text-sm mr-2"></i> QR Pay
+                    </button>
+
+                    <!-- Cart Icon with Badge -->
+                    <button onclick="toggleCartDrawer()" class="relative p-2 text-gold-400 hover:text-gold-300 transition">
+                        <i class="fa-solid fa-bag-shopping text-2xl"></i>
+                        <span id="cartBadge" class="absolute -top-1 -right-1 bg-gold-500 text-emerald-950 font-bold text-[10px] w-5 h-5 rounded-full flex items-center justify-center shadow-md">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden py-16 lg:py-24 bg-gradient-to-b from-emerald-950 via-emerald-900 to-emerald-950 border-b border-gold-500/20">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-emerald-900/80 border border-gold-500/40 px-4 py-1.5 rounded-full text-gold-400 text-xs font-semibold tracking-widest uppercase">
+                        <i class="fa-solid fa-crown text-xs"></i>
+                        <span>100% Pure Botanical Formulations</span>
+                    </div>
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+                        Authentic Healing by <span class="gold-gradient-text">DR. SHELKE</span>
+                    </h1>
+                    <p class="text-slate-300 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Handcrafted herbal remedies and essential wellness oils engineered with ancient botanical science for timeless beauty, vibrant hair, and ultimate body revitalization.
+                    </p>
+                    
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#products" class="w-full sm:w-auto gold-btn text-emerald-950 px-8 py-4 rounded-xl font-bold uppercase tracking-wider text-sm shadow-xl text-center">
+                            Explore Catalog <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                        <button onclick="openPaymentModal()" class="w-full sm:w-auto bg-emerald-900/80 hover:bg-emerald-800 text-gold-300 border border-gold-500/40 px-6 py-4 rounded-xl font-bold uppercase tracking-wider text-sm flex items-center justify-center transition">
+                            <i class="fa-solid fa-qrcode text-lg mr-2 text-gold-400"></i> Direct UPI Barcode
+                        </button>
+                    </div>
+
+                    <!-- Trust Stats -->
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-gold-500/20 text-center lg:text-left">
+                        <div>
+                            <p class="font-serif text-2xl font-bold text-gold-400">100%</p>
+                            <p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Ayurvedic Natural</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-2xl font-bold text-gold-400">10k+</p>
+                            <p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Happy Patients</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-2xl font-bold text-gold-400">Fast</p>
+                            <p class="text-xs text-slate-400 uppercase tracking-wider mt-1">UPI Barcode Checkout</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Graphic Showcase -->
+                <div class="relative flex justify-center">
+                    <div class="relative w-full max-w-md aspect-square rounded-3xl bg-gradient-to-tr from-gold-600/20 to-emerald-800/40 p-1 border border-gold-500/40 shadow-2xl backdrop-blur-xl flex flex-col items-center justify-center text-center p-8">
+                        <div class="w-32 h-32 rounded-full border-4 border-gold-500/60 p-2 mb-6 bg-emerald-900 flex items-center justify-center shadow-2xl">
+                            <i class="fa-solid fa-bottle-droplet text-6xl text-gold-400"></i>
+                        </div>
+                        <span class="text-xs uppercase tracking-widest text-gold-400 font-semibold">Featured Product</span>
+                        <h3 class="font-serif text-2xl font-bold text-white mt-1">He & She Premium Herbal Hair Oil</h3>
+                        <p class="text-slate-300 text-xs mt-2 max-w-xs">Enriched with 18 rare botanical herbs for hair regrowth, dandruff control, and deep scalp nourishment.</p>
+                        <div class="mt-4 flex items-center space-x-3">
+                            <span class="font-serif text-2xl font-extrabold text-gold-400">₹499</span>
+                            <span class="text-slate-400 line-through text-sm">₹699</span>
+                            <span class="bg-gold-500/20 text-gold-300 text-[10px] font-bold px-2 py-0.5 rounded uppercase">Save 28%</span>
+                        </div>
+                        <button onclick="addToCart(1)" class="mt-6 gold-btn text-emerald-950 font-bold px-6 py-2.5 rounded-lg text-xs uppercase tracking-wider w-full shadow-md">
+                            Add To Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Catalog Section -->
+    <section id="products" class="py-20 bg-emerald-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 text-xs font-semibold uppercase tracking-[0.3em] block mb-2"><i class="fa-solid fa-leaf mr-1"></i> Pure Organic Extracts</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white tracking-wide">Dr. Shelke's Botanical Formulations</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto mt-4"></div>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button onclick="filterCategory('all')" class="cat-btn active bg-gold-500 text-emerald-950 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition">All Products</button>
+                <button onclick="filterCategory('hair')" class="cat-btn bg-emerald-900 border border-gold-500/30 text-slate-300 hover:text-gold-400 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition">Hair Care</button>
+                <button onclick="filterCategory('skincare')" class="cat-btn bg-emerald-900 border border-gold-500/30 text-slate-300 hover:text-gold-400 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition">Soaps & Skin</button>
+                <button onclick="filterCategory('supplements')" class="cat-btn bg-emerald-900 border border-gold-500/30 text-slate-300 hover:text-gold-400 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition">Supplements</button>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Product items rendered dynamically via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Dedicated Prominent Barcode / QR Code Payment Feature Section -->
+    <section id="payment-info" class="py-20 bg-gradient-to-b from-emerald-900 via-emerald-950 to-emerald-900 border-y border-gold-500/30 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Details -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-gold-500/10 border border-gold-500/40 text-gold-400 px-4 py-1 rounded-full text-xs font-semibold tracking-widest uppercase">
+                        <i class="fa-solid fa-qrcode"></i>
+                        <span>Instant & Secure Payment Hub</span>
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">
+                        Scan Barcode to Pay Directly via <span class="gold-gradient-text">GPay, PhonePe & Paytm</span>
+                    </h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        We support direct UPI payment settlement for quick processing. Simply scan the official QR barcode using any Indian UPI payment application or click on direct app launcher buttons. Enter your UTR / Transaction reference ID for instant digital verification.
+                    </p>
+
+                    <!-- Steps List -->
+                    <div class="grid sm:grid-cols-3 gap-4 pt-4">
+                        <div class="bg-emerald-950/80 p-4 rounded-xl border border-gold-500/20">
+                            <div class="w-8 h-8 rounded-full bg-gold-500 text-emerald-950 font-bold flex items-center justify-center text-sm mb-3">1</div>
+                            <h4 class="font-bold text-sm text-white">Scan Barcode</h4>
+                            <p class="text-xs text-slate-400 mt-1">Scan the static QR code or click UPI quick link.</p>
+                        </div>
+                        <div class="bg-emerald-950/80 p-4 rounded-xl border border-gold-500/20">
+                            <div class="w-8 h-8 rounded-full bg-gold-500 text-emerald-950 font-bold flex items-center justify-center text-sm mb-3">2</div>
+                            <h4 class="font-bold text-sm text-white">Transfer Amount</h4>
+                            <p class="text-xs text-slate-400 mt-1">Pay to UPI ID: <span class="text-gold-300 select-all font-mono">8689958725@paytm</span></p>
+                        </div>
+                        <div class="bg-emerald-950/80 p-4 rounded-xl border border-gold-500/20">
+                            <div class="w-8 h-8 rounded-full bg-gold-500 text-emerald-950 font-bold flex items-center justify-center text-sm mb-3">3</div>
+                            <h4 class="font-bold text-sm text-white">Submit UTR</h4>
+                            <p class="text-xs text-slate-400 mt-1">Enter 12-digit UTR reference ID to verify order.</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-2 flex items-center space-x-6 text-slate-300 text-xs">
+                        <span class="flex items-center"><i class="fa-solid fa-circle-check text-gold-400 mr-2"></i> Zero Transaction Fee</span>
+                        <span class="flex items-center"><i class="fa-solid fa-shield-halved text-gold-400 mr-2"></i> 256-bit Encrypted</span>
+                    </div>
+                </div>
+
+                <!-- Right Live QR Showcase Card -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="glass-card p-6 rounded-3xl w-full max-w-sm text-center relative border-2 border-gold-500/50 shadow-2xl pulse-gold">
+                        <div class="bg-gold-500 text-emerald-950 font-bold text-xs py-1.5 px-4 rounded-full uppercase tracking-wider mb-4 inline-block">
+                            Official Merchant QR
+                        </div>
+                        <h3 class="font-serif text-lg font-bold text-white">DR. SHELKE HERBALCURE</h3>
+                        <p class="text-xs text-slate-400 mb-4">Kalyan West Botanical Dispensary</p>
+
+                        <!-- Dynamic QR Canvas Container -->
+                        <div class="bg-white p-4 rounded-2xl shadow-inner inline-block my-2 border-4 border-gold-400">
+                            <div id="staticSectionQRCode" class="flex justify-center"></div>
+                        </div>
+
+                        <!-- Payment Apps Icons -->
+                        <div class="flex justify-center items-center space-x-3 my-4 pt-2 border-t border-gold-500/20">
+                            <span class="text-[11px] text-slate-400 font-semibold uppercase">Supported:</span>
+                            <span class="bg-emerald-900 text-slate-200 text-xs font-bold px-2 py-1 rounded">GPay</span>
+                            <span class="bg-emerald-900 text-slate-200 text-xs font-bold px-2 py-1 rounded">PhonePe</span>
+                            <span class="bg-emerald-900 text-slate-200 text-xs font-bold px-2 py-1 rounded">Paytm</span>
+                            <span class="bg-emerald-900 text-slate-200 text-xs font-bold px-2 py-1 rounded">BHIM</span>
+                        </div>
+
+                        <!-- Direct App Links -->
+                        <div class="grid grid-cols-3 gap-2 mt-4">
+                            <a href="upi://pay?pa=8689958725@paytm&pn=DR%20SHELKE%20HERBALCURE&cu=INR" class="bg-emerald-800/80 hover:bg-emerald-700 text-gold-300 py-2 rounded-lg text-xs font-bold border border-gold-500/30 text-center transition">
+                                GPay
+                            </a>
+                            <a href="upi://pay?pa=8689958725@paytm&pn=DR%20SHELKE%20HERBALCURE&cu=INR" class="bg-emerald-800/80 hover:bg-emerald-700 text-gold-300 py-2 rounded-lg text-xs font-bold border border-gold-500/30 text-center transition">
+                                PhonePe
+                            </a>
+                            <a href="upi://pay?pa=8689958725@paytm&pn=DR%20SHELKE%20HERBALCURE&cu=INR" class="bg-emerald-800/80 hover:bg-emerald-700 text-gold-300 py-2 rounded-lg text-xs font-bold border border-gold-500/30 text-center transition">
+                                Paytm
+                            </a>
+                        </div>
+
+                        <button onclick="openPaymentModal()" class="w-full mt-4 gold-btn text-emerald-950 font-bold py-3 rounded-xl text-xs uppercase tracking-wider">
+                            Pay Custom Amount Now
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Manufacturer & About Section -->
+    <section id="about" class="py-20 bg-emerald-950 border-b border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-gold-400 text-xs font-semibold uppercase tracking-widest">About The Manufacturer</span>
+                    <h2 class="font-serif text-3xl font-bold text-white">Pioneering Botanical Care in Kalyan West</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Under the expert leadership of Dr. Shelke, our wellness center produces traditional Ayurvedic formulations using ethically sourced herbs, cold-pressed botanical oils, and organic essential extracts. Each product is formulated without harsh sulfates, parabens, or synthetic chemicals to deliver maximum therapeutic efficacy.
+                    </p>
+                    
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-location-dot text-gold-400 text-lg mt-1"></i>
+                            <div>
+                                <h5 class="text-white text-sm font-bold">Manufacturing Facility & Dispensary</h5>
+                                <p class="text-slate-400 text-xs">Kalyan West, Maharashtra - 421301, India</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-phone text-gold-400 text-lg mt-1"></i>
+                            <div>
+                                <h5 class="text-white text-sm font-bold">Direct Mobile & WhatsApp Support</h5>
+                                <p class="text-slate-400 text-xs">+91 8689958725</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-envelope text-gold-400 text-lg mt-1"></i>
+                            <div>
+                                <h5 class="text-white text-sm font-bold">Email Inquiries</h5>
+                                <p class="text-slate-400 text-xs">drshelkeherbalcure@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doctor Trust Banner -->
+                <div class="glass-card p-8 rounded-3xl border border-gold-500/30 text-center relative overflow-hidden">
+                    <div class="w-24 h-24 rounded-full border-2 border-gold-400 mx-auto mb-4 bg-emerald-900 flex items-center justify-center text-4xl text-gold-400">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-white">Dr. Shelke's Quality Guarantee</h3>
+                    <p class="text-xs text-gold-300 mt-1 uppercase tracking-wider font-semibold">Certified Herbal Formulations</p>
+                    <p class="text-slate-300 text-xs mt-4 italic">
+                        "Our herbal oils, soaps, and supplements are formulated with meticulous attention to purity. We guarantee 100% natural botanical ingredients for optimal scalp, skin, and bodily health."
+                    </p>
+                    <div class="mt-6 pt-6 border-t border-gold-500/20 flex justify-center space-x-6 text-xs text-slate-300">
+                        <span><i class="fa-solid fa-check text-gold-400 mr-1"></i> Paraben Free</span>
+                        <span><i class="fa-solid fa-check text-gold-400 mr-1"></i> Cruelty Free</span>
+                        <span><i class="fa-solid fa-check text-gold-400 mr-1"></i> GMP Certified</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-emerald-950 pt-16 pb-12 border-t border-gold-500/30 text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-leaf text-gold-400 text-xl"></i>
+                        <span class="font-serif text-lg font-bold text-white tracking-wider">DR. SHELKE HERBALCURE</span>
+                    </div>
+                    <p class="leading-relaxed text-slate-400">
+                        Ultra-luxurious herbal wellness and therapeutic remedies crafted for maximum effectiveness and purity.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-serif text-white font-bold uppercase tracking-wider text-sm mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#products" class="hover:text-gold-400 transition">Shop Catalog</a></li>
+                        <li><a href="#payment-info" class="hover:text-gold-400 transition">Scan & Pay QR</a></li>
+                        <li><a href="javascript:void(0)" onclick="openTrackingModal()" class="hover:text-gold-400 transition">Order Status Tracker</a></li>
+                        <li><a href="#about" class="hover:text-gold-400 transition">Manufacturer Info</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-serif text-white font-bold uppercase tracking-wider text-sm mb-4">Ayurvedic Specialties</h4>
+                    <ul class="space-y-2">
+                        <li>He & She Premium Herbal Oil</li>
+                        <li>Neem, Rose, Charcoal & Ubtan Soaps</li>
+                        <li>Therapeutic Hair Serums</li>
+                        <li>Vitamin E & Multivitamin Support</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-serif text-white font-bold uppercase tracking-wider text-sm mb-4">Dispensary Contact</h4>
+                    <p class="text-slate-300">Kalyan West, Maharashtra, India</p>
+                    <p class="mt-2"><strong class="text-white">Phone:</strong> +91 8689958725</p>
+                    <p><strong class="text-white">UPI:</strong> 8689958725@paytm</p>
+                    <p><strong class="text-white">Email:</strong> drshelkeherbalcure@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-gold-500/20 text-center flex flex-col sm:flex-row justify-between items-center text-slate-500">
+                <p>&copy; 2026 DR. SHELKE HERBALCURE. All rights reserved.</p>
+                <p class="mt-2 sm:mt-0 text-slate-400"><i class="fa-solid fa-shield text-gold-400 mr-1"></i> Authentic Herbal Formulations | Kalyan West</p>
+            </div>
+        </div>
     </footer>
 
+
+    <!-- ================= MODALS & DRAWERS ================= -->
+
+    <!-- Sliding Shopping Cart Drawer -->
+    <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-opacity duration-300 opacity-0">
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm pointer-events-auto" onclick="toggleCartDrawer()"></div>
+        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10 pointer-events-auto">
+            <div class="w-screen max-w-md bg-emerald-950 border-l border-gold-500/30 shadow-2xl flex flex-col">
+                <!-- Cart Header -->
+                <div class="p-6 border-b border-gold-500/20 flex items-center justify-between bg-emerald-900/50">
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-bag-shopping text-gold-400 text-xl"></i>
+                        <h2 class="font-serif text-lg font-bold text-white uppercase tracking-wider">Your Shopping Bag</h2>
+                    </div>
+                    <button onclick="toggleCartDrawer()" class="text-slate-400 hover:text-white p-2">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Cart Items Container -->
+                <div id="cartItemsList" class="flex-1 overflow-y-auto p-6 space-y-4">
+                    <!-- Dynamic Cart Items -->
+                </div>
+
+                <!-- Cart Footer Summary & Checkout Button -->
+                <div id="cartFooter" class="p-6 border-t border-gold-500/20 bg-emerald-900/40 space-y-4">
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs text-slate-300">
+                            <span>Subtotal</span>
+                            <span id="cartSubtotal" class="font-mono font-bold text-white">₹0</span>
+                        </div>
+                        <div class="flex justify-between text-xs text-slate-300">
+                            <span>Express Shipping (India)</span>
+                            <span id="cartShipping" class="font-mono text-gold-400 font-bold">FREE</span>
+                        </div>
+                        <div class="flex justify-between text-base font-bold text-white pt-2 border-t border-gold-500/20">
+                            <span>Total Payable</span>
+                            <span id="cartTotal" class="font-serif text-gold-400 text-xl">₹0</span>
+                        </div>
+                    </div>
+
+                    <button onclick="proceedToCheckout()" class="w-full gold-btn text-emerald-950 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center space-x-2 shadow-lg">
+                        <span>Proceed To Barcode Payment</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    
+                    <button onclick="buildWhatsAppOrder()" class="w-full bg-emerald-800 hover:bg-emerald-700 text-emerald-100 font-bold py-2.5 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center space-x-2 border border-gold-500/30 transition">
+                        <i class="fa-brands fa-whatsapp text-green-400 text-base"></i>
+                        <span>Order via WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- DEDICATED BARCODE & QR CODE PAYMENT CHECKOUT MODAL -->
+    <div id="paymentModal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass-card max-w-xl w-full rounded-3xl border-2 border-gold-500/60 shadow-2xl overflow-hidden relative my-8">
+            
+            <!-- Modal Header -->
+            <div class="bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-900 p-6 border-b border-gold-500/30 flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-gold-500/20 border border-gold-400 flex items-center justify-center text-gold-400 text-lg">
+                        <i class="fa-solid fa-qrcode"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-lg font-bold text-white">Scan Barcode / Pay UPI</h3>
+                        <p class="text-xs text-gold-300">DR. SHELKE HERBALCURE | Kalyan West</p>
+                    </div>
+                </div>
+                <button onclick="closePaymentModal()" class="text-slate-400 hover:text-white p-2">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+
+            <div class="p-6 space-y-6 max-h-[80vh] overflow-y-auto">
+
+                <!-- Amount Header -->
+                <div class="bg-emerald-900/60 p-4 rounded-2xl border border-gold-500/30 text-center">
+                    <span class="text-xs text-slate-400 uppercase tracking-widest font-semibold">Total Amount To Pay</span>
+                    <div id="modalPayAmount" class="font-serif text-3xl font-extrabold text-gold-400 mt-1">₹0</div>
+                    <p class="text-[11px] text-slate-300 mt-1">Payable to VPA: <span class="text-gold-300 font-mono font-bold select-all">8689958725@paytm</span></p>
+                </div>
+
+                <!-- Interactive Barcode / QR Section -->
+                <div class="flex flex-col items-center justify-center text-center">
+                    <div class="p-3 bg-white rounded-2xl border-4 border-gold-500 shadow-2xl relative group">
+                        <div id="checkoutQRCode" class="flex justify-center"></div>
+                    </div>
+                    <p class="text-xs text-gold-300 font-semibold mt-3">
+                        <i class="fa-solid fa-camera mr-1"></i> Scan with GPay, PhonePe, Paytm, or BHIM
+                    </p>
+                </div>
+
+                <!-- Quick UPI App Action Buttons -->
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2 text-center">Direct App Checkout Links</label>
+                    <div class="grid grid-cols-3 gap-3">
+                        <a id="gpayDirectBtn" href="#" class="bg-emerald-900 hover:bg-emerald-800 text-slate-200 border border-gold-500/30 py-2.5 rounded-xl text-xs font-bold text-center flex flex-col items-center justify-center transition">
+                            <i class="fa-solid fa-mobile-screen text-gold-400 text-sm mb-1"></i>
+                            <span>GPay</span>
+                        </a>
+                        <a id="phonepeDirectBtn" href="#" class="bg-emerald-900 hover:bg-emerald-800 text-slate-200 border border-gold-500/30 py-2.5 rounded-xl text-xs font-bold text-center flex flex-col items-center justify-center transition">
+                            <i class="fa-solid fa-wallet text-gold-400 text-sm mb-1"></i>
+                            <span>PhonePe</span>
+                        </a>
+                        <a id="paytmDirectBtn" href="#" class="bg-emerald-900 hover:bg-emerald-800 text-slate-200 border border-gold-500/30 py-2.5 rounded-xl text-xs font-bold text-center flex flex-col items-center justify-center transition">
+                            <i class="fa-solid fa-bolt text-gold-400 text-sm mb-1"></i>
+                            <span>Paytm</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- UTR / Transaction Verification Form -->
+                <form id="paymentVerifyForm" onsubmit="confirmPayment(event)" class="space-y-4 pt-4 border-t border-gold-500/20">
+                    <h4 class="font-serif text-sm font-bold text-white uppercase tracking-wider"><i class="fa-solid fa-receipt text-gold-400 mr-2"></i> Confirm Payment Verification</h4>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs text-slate-300 font-medium mb-1">Full Name *</label>
+                            <input type="text" id="custName" required placeholder="Enter your full name" class="w-full bg-emerald-950 border border-gold-500/30 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-gold-400">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-slate-300 font-medium mb-1">Mobile Number *</label>
+                            <input type="tel" id="custPhone" required placeholder="10-digit mobile number" class="w-full bg-emerald-950 border border-gold-500/30 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-gold-400">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs text-slate-300 font-medium mb-1">Shipping Address in India *</label>
+                        <textarea id="custAddress" required rows="2" placeholder="House/Flat No, Street, Landmark, City, Pincode" class="w-full bg-emerald-950 border border-gold-500/30 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-gold-400"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs text-gold-400 font-bold mb-1">12-Digit UTR / Transaction Reference ID *</label>
+                        <input type="text" id="utrNumber" required maxlength="12" minlength="12" placeholder="e.g. 329182736412" class="w-full bg-emerald-950 border-2 border-gold-500/60 rounded-xl px-3 py-2.5 text-xs text-white font-mono tracking-widest focus:outline-none focus:border-gold-400">
+                        <p class="text-[10px] text-slate-400 mt-1"><i class="fa-solid fa-circle-info mr-1"></i> You can find the 12-digit UTR in your GPay / PhonePe payment receipt.</p>
+                    </div>
+
+                    <button type="submit" class="w-full gold-btn text-emerald-950 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider shadow-xl flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-circle-check text-base"></i>
+                        <span>Submit Order & Verify Payment</span>
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- PRODUCT QUICK VIEW MODAL -->
+    <div id="quickViewModal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass-card max-w-2xl w-full rounded-3xl border border-gold-500/40 p-6 relative overflow-hidden my-8">
+            <button onclick="closeQuickView()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 z-10">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+            <div id="quickViewContent" class="grid sm:grid-cols-2 gap-6 items-center">
+                <!-- Dynamically Populated -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- LIVE ORDER TRACKING MODAL -->
+    <div id="trackingModal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass-card max-w-lg w-full rounded-3xl border border-gold-500/40 p-6 relative">
+            <div class="flex justify-between items-center pb-4 border-b border-gold-500/20">
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-truck-fast text-gold-400 text-xl"></i>
+                    <h3 class="font-serif text-lg font-bold text-white">Live Order Tracking</h3>
+                </div>
+                <button onclick="closeTrackingModal()" class="text-slate-400 hover:text-white">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+
+            <div class="py-6 space-y-4">
+                <label class="block text-xs text-slate-300 font-medium">Enter Order ID or Mobile Number</label>
+                <div class="flex space-x-2">
+                    <input type="text" id="trackInput" placeholder="e.g. DSH-8921 or 8689958725" class="flex-1 bg-emerald-950 border border-gold-500/30 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-gold-400">
+                    <button onclick="performOrderTracking()" class="gold-btn text-emerald-950 font-bold px-4 py-2 rounded-xl text-xs uppercase">Track</button>
+                </div>
+
+                <!-- Visual Timeline Result -->
+                <div id="trackingTimeline" class="hidden pt-6 space-y-6">
+                    <div class="bg-emerald-900/40 p-3 rounded-xl border border-gold-500/20 text-xs text-gold-300 flex justify-between font-mono">
+                        <span id="trackIDVal">Order ID: DSH-8921</span>
+                        <span>Estimated Delivery: 2 Days</span>
+                    </div>
+
+                    <!-- Step Tracker -->
+                    <div class="relative pl-6 space-y-6 border-l-2 border-gold-500/40">
+                        <div class="relative">
+                            <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-gold-500 border-2 border-emerald-950"></div>
+                            <h5 class="text-xs font-bold text-white">Order Confirmed</h5>
+                            <p class="text-[10px] text-slate-400">Payment Verified via UTR</p>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-gold-500 border-2 border-emerald-950"></div>
+                            <h5 class="text-xs font-bold text-white">Kalyan West Botanical Processing</h5>
+                            <p class="text-[10px] text-slate-400">Herbal preparation & quality inspection</p>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-emerald-700 border-2 border-emerald-950"></div>
+                            <h5 class="text-xs font-bold text-slate-400">Dispatched via Express Courier</h5>
+                            <p class="text-[10px] text-slate-500">In Transit to Destination</p>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-emerald-800 border-2 border-emerald-950"></div>
+                            <h5 class="text-xs font-bold text-slate-400">Out for Delivery</h5>
+                            <p class="text-[10px] text-slate-500">Local courier delivery partner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- SUCCESS RECEIPT CONFIRMATION MODAL -->
+    <div id="receiptModal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass-card max-w-md w-full rounded-3xl border-2 border-gold-500/80 p-6 text-center space-y-4 my-8">
+            <div class="w-16 h-16 rounded-full bg-gold-500 text-emerald-950 flex items-center justify-center text-3xl mx-auto shadow-xl">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-white">Order Successfully Placed!</h3>
+            <p class="text-xs text-slate-300">Thank you for choosing Dr. Shelke Herbalcure. Your payment verification has been logged.</p>
+            
+            <div id="receiptDetails" class="bg-emerald-900/60 p-4 rounded-2xl border border-gold-500/30 text-left text-xs space-y-2 font-mono">
+                <!-- Dynamically Filled -->
+            </div>
+
+            <div class="pt-2 flex flex-col gap-2">
+                <button onclick="downloadReceiptPrint()" class="gold-btn text-emerald-950 font-bold py-3 rounded-xl text-xs uppercase tracking-wider">
+                    <i class="fa-solid fa-print mr-1"></i> Print Payment Receipt
+                </button>
+                <button onclick="closeReceiptModal()" class="bg-emerald-900 hover:bg-emerald-800 text-slate-300 py-2.5 rounded-xl text-xs uppercase font-bold border border-gold-500/30">
+                    Close & Continue Shopping
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Products Database
+        const products = [
+            {
+                id: 1,
+                name: "He & She Premium Herbal Hair Oil",
+                price: 499,
+                originalPrice: 699,
+                category: "hair",
+                icon: "fa-bottle-droplet",
+                badge: "Bestseller",
+                description: "Therapeutic herbal hair oil enriched with 18 pure botanical extracts for deep scalp nourishment, hair regrowth, and stopping dandruff.",
+                ingredients: "Amla, Bhringraj, Brahmi, Coconut Oil, Sesame Seed, Hibiscus Extracts."
+            },
+            {
+                id: 2,
+                name: "Herbal Care Soap (Neem, Rose, Charcoal, Ubtan)",
+                price: 75,
+                originalPrice: 120,
+                category: "skincare",
+                icon: "fa-soap",
+                badge: "Popular",
+                description: "Handcrafted natural herbal soap bars available in Neem, Rose, Activated Charcoal, and Traditional Ubtan for glowing skin.",
+                ingredients: "Organic Neem Oil, Wild Rose Water, Activated Coconut Charcoal, Turmeric & Sandalwood."
+            },
+            {
+                id: 3,
+                name: "Vitamin E Softgel Capsules",
+                price: 99,
+                originalPrice: 150,
+                category: "supplements",
+                icon: "fa-capsules",
+                badge: "Pure Grade",
+                description: "High-potency botanical Vitamin E softgels for vibrant skin glow, cell repair, and hair strand strengthening.",
+                ingredients: "Pure Natural Tocopheryl Acetate, Wheatgerm Oil."
+            },
+            {
+                id: 4,
+                name: "Multivitamin Tablets",
+                price: 195,
+                originalPrice: 250,
+                category: "supplements",
+                icon: "fa-tablets",
+                badge: "Daily Care",
+                description: "Essential daily botanical multivitamin formulation for boosting immunity, energy levels, and vital tissue health.",
+                ingredients: "Ginseng, Ashwagandha, Essential Vitamins & Minerals."
+            },
+            {
+                id: 5,
+                name: "Herbal Hair Serum",
+                price: 240,
+                originalPrice: 320,
+                category: "hair",
+                icon: "fa-pump-soap",
+                badge: "Frizz Free",
+                description: "Lightweight, non-greasy botanical hair serum that restores shine, protects against heat, and controls split ends.",
+                ingredients: "Argan Extract, Jojoba Oil, Essential Herbal Botanical Oils."
+            },
+            {
+                id: 6,
+                name: "Herbal Shampoo",
+                price: 299,
+                originalPrice: 399,
+                category: "hair",
+                icon: "fa-shower",
+                badge: "Sulfate Free",
+                description: "Gentle cleanser formulated with Shikakai and Reetha to gently wash hair without stripping natural scalp moisture.",
+                ingredients: "Shikakai, Reetha, Aloe Vera, Botanical Herbs."
+            },
+            {
+                id: 7,
+                name: "Herbal Hair Colour",
+                price: 299,
+                originalPrice: 450,
+                category: "hair",
+                icon: "fa-paintbrush",
+                badge: "100% Natural",
+                description: "Ammonia-free organic herbal henna and indigo hair color blend for rich, natural dark coverage and conditioning.",
+                ingredients: "Pure Henna Leaves, Indigo Powder, Amla, Shikakai."
+            }
+        ];
+
+        // Global Cart State
+        let cart = [];
+        let currentCheckoutTotal = 0;
+
+        // Initialize Web Application
+        window.onload = function() {
+            renderProducts(products);
+            generateStaticQRCode();
+            updateCartUI();
+        };
+
+        // Render Products Grid
+        function renderProducts(items) {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
+
+            items.forEach(product => {
+                const card = document.createElement('div');
+                card.className = "glass-card rounded-3xl p-6 flex flex-col justify-between border border-gold-500/20 hover:border-gold-500/60 transition-all duration-300 hover:-translate-y-1 group";
+                
+                card.innerHTML = `
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-gold-500/10 border border-gold-500/30 text-gold-400 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">${product.badge}</span>
+                            <button onclick="openQuickView(${product.id})" class="text-slate-400 hover:text-gold-400 transition text-xs">
+                                <i class="fa-solid fa-expand mr-1"></i> Quick View
+                            </button>
+                        </div>
+                        
+                        <div class="w-20 h-20 rounded-2xl bg-emerald-900/80 border border-gold-500/30 mx-auto flex items-center justify-center my-4 group-hover:scale-110 transition-transform duration-300 shadow-xl">
+                            <i class="fa-solid ${product.icon} text-3xl text-gold-400"></i>
+                        </div>
+
+                        <h3 class="font-serif text-lg font-bold text-white text-center mt-2">${product.name}</h3>
+                        <p class="text-slate-400 text-xs text-center mt-2 line-clamp-2">${product.description}</p>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-gold-500/20">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <span class="font-serif text-xl font-bold text-gold-400">₹${product.price}</span>
+                                <span class="text-slate-500 line-through text-xs ml-1">₹${product.originalPrice}</span>
+                            </div>
+                            <span class="text-[10px] text-emerald-400 bg-emerald-900 px-2 py-0.5 rounded font-semibold">In Stock</span>
+                        </div>
+
+                        <button onclick="addToCart(${product.id})" class="w-full gold-btn text-emerald-950 font-bold py-2.5 rounded-xl text-xs uppercase tracking-wider shadow-md">
+                            <i class="fa-solid fa-cart-plus mr-1"></i> Add To Cart
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Category Filtering
+        function filterCategory(category) {
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.classList.remove('bg-gold-500', 'text-emerald-950');
+                btn.classList.add('bg-emerald-900', 'text-slate-300');
+            });
+
+            event.target.classList.remove('bg-emerald-900', 'text-slate-300');
+            event.target.classList.add('bg-gold-500', 'text-emerald-950');
+
+            if (category === 'all') {
+                renderProducts(products);
+            } else {
+                const filtered = products.filter(p => p.category === category);
+                renderProducts(filtered);
+            }
+        }
+
+        // Search Input Filter
+        function filterProducts() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = products.filter(p => p.name.toLowerCase().includes(query) || p.description.toLowerCase().includes(query));
+            renderProducts(filtered);
+        }
+
+        // Add to Cart
+        function addToCart(productId) {
+            const item = products.find(p => p.id === productId);
+            const existing = cart.find(c => c.id === productId);
+
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({ ...item, quantity: 1 });
+            }
+
+            updateCartUI();
+            toggleCartDrawer(true);
+        }
+
+        // Update Cart Quantity
+        function updateQuantity(productId, delta) {
+            const item = cart.find(c => c.id === productId);
+            if (item) {
+                item.quantity += delta;
+                if (item.quantity <= 0) {
+                    cart = cart.filter(c => c.id !== productId);
+                }
+            }
+            updateCartUI();
+        }
+
+        // Render Cart UI
+        function updateCartUI() {
+            const container = document.getElementById('cartItemsList');
+            const badge = document.getElementById('cartBadge');
+            
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            badge.innerText = totalItems;
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12">
+                        <i class="fa-solid fa-bag-shopping text-4xl text-slate-600 mb-3"></i>
+                        <p class="text-slate-400 text-sm">Your bag is currently empty.</p>
+                    </div>
+                `;
+                document.getElementById('cartSubtotal').innerText = '₹0';
+                document.getElementById('cartTotal').innerText = '₹0';
+                return;
+            }
+
+            container.innerHTML = '';
+            let subtotal = 0;
+
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+
+                const div = document.createElement('div');
+                div.className = "bg-emerald-900/40 p-3 rounded-2xl border border-gold-500/20 flex items-center justify-between";
+                div.innerHTML = `
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-950 flex items-center justify-center text-gold-400">
+                            <i class="fa-solid ${item.icon} text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-white max-w-[150px] truncate">${item.name}</h4>
+                            <p class="text-gold-400 font-mono text-xs font-bold mt-0.5">₹${item.price}</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-2">
+                        <button onclick="updateQuantity(${item.id}, -1)" class="w-6 h-6 rounded-lg bg-emerald-800 text-gold-400 font-bold flex items-center justify-center text-xs">-</button>
+                        <span class="text-xs font-mono font-bold text-white w-4 text-center">${item.quantity}</span>
+                        <button onclick="updateQuantity(${item.id}, 1)" class="w-6 h-6 rounded-lg bg-emerald-800 text-gold-400 font-bold flex items-center justify-center text-xs">+</button>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+
+            document.getElementById('cartSubtotal').innerText = `₹${subtotal}`;
+            document.getElementById('cartTotal').innerText = `₹${subtotal}`;
+            currentCheckoutTotal = subtotal;
+        }
+
+        // Toggle Cart Drawer
+        function toggleCartDrawer(openForce) {
+            const drawer = document.getElementById('cartDrawer');
+            if (openForce || drawer.classList.contains('opacity-0')) {
+                drawer.classList.remove('pointer-events-none', 'opacity-0');
+            } else {
+                drawer.classList.add('pointer-events-none', 'opacity-0');
+            }
+        }
+
+        // Generate Static QR Code for Feature Showcase
+        function generateStaticQRCode() {
+            const container = document.getElementById('staticSectionQRCode');
+            container.innerHTML = '';
+            new QRCode(container, {
+                text: "upi://pay?pa=8689958725@paytm&pn=DR%20SHELKE%20HERBALCURE&cu=INR",
+                width: 140,
+                height: 140,
+                colorDark : "#062c1e",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        }
+
+        // Proceed to Checkout -> Launch Dedicated Barcode Modal
+        function proceedToCheckout() {
+            if (cart.length === 0) {
+                alert("Please add items to your cart before proceeding to payment.");
+                return;
+            }
+            toggleCartDrawer(false);
+            openPaymentModal(currentCheckoutTotal);
+        }
+
+        // Open Barcode / QR Payment Modal
+        function openPaymentModal(amount) {
+            const finalAmount = amount || currentCheckoutTotal || 499;
+            currentCheckoutTotal = finalAmount;
+            
+            document.getElementById('modalPayAmount').innerText = `₹${finalAmount}`;
+            
+            // Dynamic UPI string generation
+            const upiString = `upi://pay?pa=8689958725@paytm&pn=DR%20SHELKE%20HERBALCURE&am=${finalAmount}&cu=INR`;
+            
+            // Generate Checkout QR Barcode
+            const qrContainer = document.getElementById('checkoutQRCode');
+            qrContainer.innerHTML = '';
+            new QRCode(qrContainer, {
+                text: upiString,
+                width: 180,
+                height: 180,
+                colorDark : "#031710",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+
+            // Set Direct Apps Links
+            document.getElementById('gpayDirectBtn').href = upiString;
+            document.getElementById('phonepeDirectBtn').href = upiString;
+            document.getElementById('paytmDirectBtn').href = upiString;
+
+            document.getElementById('paymentModal').classList.remove('hidden');
+        }
+
+        function closePaymentModal() {
+            document.getElementById('paymentModal').classList.add('hidden');
+        }
+
+        // Confirm Payment & UTR Verification
+        function confirmPayment(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('custName').value;
+            const phone = document.getElementById('custPhone').value;
+            const address = document.getElementById('custAddress').value;
+            const utr = document.getElementById('utrNumber').value;
+
+            if (utr.length !== 12) {
+                alert("Please enter a valid 12-digit UTR transaction reference number.");
+                return;
+            }
+
+            const orderId = 'DSH-' + Math.floor(1000 + Math.random() * 9000);
+
+            // Populate Receipt Modal
+            const receiptDetails = document.getElementById('receiptDetails');
+            receiptDetails.innerHTML = `
+                <p><span class="text-slate-400">Order ID:</span> <strong class="text-gold-400">${orderId}</strong></p>
+                <p><span class="text-slate-400">Customer Name:</span> ${name}</p>
+                <p><span class="text-slate-400">Mobile:</span> ${phone}</p>
+                <p><span class="text-slate-400">UTR / Ref No:</span> ${utr}</p>
+                <p><span class="text-slate-400">Amount Paid:</span> ₹${currentCheckoutTotal}</p>
+                <p><span class="text-slate-400">Dispensary:</span> Kalyan West, MH</p>
+                <p><span class="text-slate-400">Status:</span> <span class="text-green-400">Payment Logged & Verified</span></p>
+            `;
+
+            // Trigger Confetti Animation
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+
+            closePaymentModal();
+            document.getElementById('receiptModal').classList.remove('hidden');
+
+            // Reset Cart
+            cart = [];
+            updateCartUI();
+        }
+
+        function closeReceiptModal() {
+            document.getElementById('receiptModal').classList.add('hidden');
+        }
+
+        function downloadReceiptPrint() {
+            window.print();
+        }
+
+        // Open Quick View Modal
+        function openQuickView(productId) {
+            const product = products.find(p => p.id === productId);
+            const container = document.getElementById('quickViewContent');
+            
+            container.innerHTML = `
+                <div class="w-full aspect-square bg-emerald-950 rounded-2xl border border-gold-500/30 flex items-center justify-center p-6">
+                    <i class="fa-solid ${product.icon} text-7xl text-gold-400"></i>
+                </div>
+                <div class="space-y-4 text-left">
+                    <span class="bg-gold-500/20 text-gold-400 text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-widest">${product.badge}</span>
+                    <h3 class="font-serif text-2xl font-bold text-white">${product.name}</h3>
+                    <div class="flex items-center space-x-3">
+                        <span class="font-serif text-2xl font-extrabold text-gold-400">₹${product.price}</span>
+                        <span class="text-slate-500 line-through text-sm">₹${product.originalPrice}</span>
+                    </div>
+                    <p class="text-slate-300 text-xs leading-relaxed">${product.description}</p>
+                    <div class="bg-emerald-900/50 p-3 rounded-xl border border-gold-500/20">
+                        <p class="text-[11px] text-gold-300 font-bold uppercase tracking-wider">Botanical Key Ingredients:</p>
+                        <p class="text-xs text-slate-300 mt-1">${product.ingredients}</p>
+                    </div>
+                    <button onclick="addToCart(${product.id}); closeQuickView();" class="w-full gold-btn text-emerald-950 font-bold py-3 rounded-xl text-xs uppercase tracking-wider">
+                        Add To Bag
+                    </button>
+                </div>
+            `;
+
+            document.getElementById('quickViewModal').classList.remove('hidden');
+        }
+
+        function closeQuickView() {
+            document.getElementById('quickViewModal').classList.add('hidden');
+        }
+
+        // Tracking Modal Functions
+        function openTrackingModal() {
+            document.getElementById('trackingModal').classList.remove('hidden');
+        }
+
+        function closeTrackingModal() {
+            document.getElementById('trackingModal').classList.add('hidden');
+        }
+
+        function performOrderTracking() {
+            const val = document.getElementById('trackInput').value;
+            if (!val) {
+                alert("Please enter a valid Order ID or Phone number.");
+                return;
+            }
+            document.getElementById('trackIDVal').innerText = `Order Ref: ${val}`;
+            document.getElementById('trackingTimeline').classList.remove('hidden');
+        }
+
+        // Direct WhatsApp Builder
+        function buildWhatsAppOrder() {
+            if (cart.length === 0) {
+                alert("Your cart is empty. Please add products first.");
+                return;
+            }
+
+            let msg = "Hello DR. SHELKE HERBALCURE, I would like to place an order:\n\n";
+            cart.forEach(i => {
+                msg += `- ${i.name} (x${i.quantity}) : ₹${i.price * i.quantity}\n`;
+            });
+            msg += `\n*Total Amount:* ₹${currentCheckoutTotal}\n`;
+            msg += `\nPlease guide me with payment verification for UPI ID: 8689958725@paytm`;
+
+            const encoded = encodeURIComponent(msg);
+            window.open(`https://wa.me/918689958725?text=${encoded}`, '_blank');
+        }
+    </script>
 </body>
 </html>
+```
